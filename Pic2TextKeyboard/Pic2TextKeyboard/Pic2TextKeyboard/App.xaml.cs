@@ -11,7 +11,7 @@ namespace Pic2TextKeyboard
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new CameraPage();
         }
 
         protected override void OnStart()

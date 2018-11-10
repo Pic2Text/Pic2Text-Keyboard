@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pic2TextKeyboard.iOS", "Pic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pic2TextKeyboard", "Pic2TextKeyboard\Pic2TextKeyboard\Pic2TextKeyboard.csproj", "{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pic2Text", "Pic2Text\Pic2Text.csproj", "{C95058B7-4D82-41D8-B3C2-99342AF70B2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -133,6 +135,30 @@ Global
 		{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|Any CPU.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|Any CPU.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|iPhone.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|iPhone.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|Any CPU.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|Any CPU.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|iPhone.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|iPhone.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|iPhoneSimulator.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.AppStore|iPhoneSimulator.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|Any CPU.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|iPhone.Build.0 = Release|iPhone
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C95058B7-4D82-41D8-B3C2-99342AF70B2B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

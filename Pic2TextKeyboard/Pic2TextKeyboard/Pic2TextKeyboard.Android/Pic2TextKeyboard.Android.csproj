@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pic2TextKeyboard\Pic2TextKeyboard.csproj">
-      <Project>{1D8570F0-0878-4FED-B264-96294DDFDFD9}</Project>
+      <Project>{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}</Project>
       <Name>Pic2TextKeyboard</Name>
     </ProjectReference>
   </ItemGroup>

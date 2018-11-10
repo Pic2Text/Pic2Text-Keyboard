@@ -95,6 +95,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="iOSCameraPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -153,8 +154,13 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Pic2TextKeyboard\Pic2TextKeyboard.csproj">
-      <Project>{1D8570F0-0878-4FED-B264-96294DDFDFD9}</Project>
+      <Project>{4CCF9F94-9FB1-4672-86C1-A754F9BD53F0}</Project>
       <Name>Pic2TextKeyboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pic2Text\Pic2Text.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{C95058B7-4D82-41D8-B3C2-99342AF70B2B}</Project>
+      <Name>Pic2Text</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
