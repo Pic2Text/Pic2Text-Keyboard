@@ -44,7 +44,7 @@
   </Row>
 
   <Row>
-    <Key android:codes="155" android:keyLabel="CAPS" android:keyEdgeFlags="left" />
+    <Key android:codes="115" android:keyLabel="CAPS" android:keyEdgeFlags="left" />
     <Key android:codes="122" android:keyLabel="z"/>
     <Key android:codes="120" android:keyLabel="x"/>
     <Key android:codes="99" android:keyLabel="c"/>

@@ -9,6 +9,7 @@ using Android.OS;
 using Android.InputMethodServices;
 using Java.Lang;
 using Android.Views.InputMethods;
+using Android.Content;
 
 namespace Pic2TextKeyboard.Droid
 {
@@ -50,7 +51,10 @@ namespace Pic2TextKeyboard.Droid
 
                     break;
                 case Android.Views.Keycode.CapsLock:
-                    
+                    Intent intent = new Intent();
+                    intent.SetClass(this, typeof(CameraActivity));
+                    intent.SetFlags(ActivityFlags.NewTask);
+                    StartActivity(intent);
                     break;
                 default:
                     char code = (char)primaryCode;
