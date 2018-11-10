@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{84C6B544-3B80-4F6E-BEB1-A210C83071BE}</ProjectGuid>
+    <ProjectGuid>{1E3A825D-D89D-4AC1-B965-3A4F0CF53203}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -153,7 +153,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Pic2TextKeyboard\Pic2TextKeyboard.csproj">
-      <Project>{1D8570F0-0878-4FED-B264-96294DDFDFD9}</Project>
+      <Project>{17991CD5-3BFF-4B73-851B-59070561DD45}</Project>
       <Name>Pic2TextKeyboard</Name>
     </ProjectReference>
   </ItemGroup>
