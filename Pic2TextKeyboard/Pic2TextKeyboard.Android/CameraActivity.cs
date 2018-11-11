@@ -16,13 +16,6 @@ using Java.IO;
 
 namespace Pic2TextKeyboard.Droid
 {
-    public static class App
-    {
-        public static File _file;
-        public static File _dir;
-        public static Bitmap bitmap;
-    }
-
     [Activity(Label = "CameraActivity")]
     public class CameraActivity : Activity
     {
@@ -34,39 +27,21 @@ namespace Pic2TextKeyboard.Droid
             SetContentView(Resource.Layout.CameraLayout);
             if (IsThereAnAppToTakePictures())
             {
-                CreateDirectoryForPictures();
                 Button button = FindViewById<Button>(Resource.Id.myButton);
                 _imageView = FindViewById<ImageView>(Resource.Id.imageView1);
-                button.Click += TakeAPicture;
+                TakeAPicture(null, new System.EventArgs());
             }
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            base.OnActivityResult(requestCode, resultCode, data);
-            Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-            Uri contentUri = Uri.FromFile(App._file);
-            mediaScanIntent.SetData(contentUri);
-            SendBroadcast(mediaScanIntent);
-            int height = Resources.DisplayMetrics.HeightPixels;
-            int width = _imageView.Height;
-            App.bitmap = App._file.Path.LoadAndResizeBitmap(width, height);
-            if (App.bitmap != null)
+            if (requestCode == 100 && resultCode == Result.Ok)
             {
-                _imageView.SetImageBitmap(App.bitmap);
-                App.bitmap = null;
-            }
-            System.GC.Collect();
-        }
-
-        private void CreateDirectoryForPictures()
-        {
-            App._dir = new File(
-                Android.OS.Environment.GetExternalStoragePublicDirectory(
-                    Android.OS.Environment.DirectoryPictures), "Pic2TextKeyboard");
-            if (!App._dir.Exists())
-            {
-                App._dir.Mkdirs();
+                if (data != null && data.Extras != null)
+                {
+                    Bitmap imageBitmap = (Bitmap)data.Extras.Get("data");
+                    _imageView.SetImageBitmap(imageBitmap);
+                }
             }
         }
 
@@ -80,18 +55,20 @@ namespace Pic2TextKeyboard.Droid
 
         private void TakeAPicture(object sender, System.EventArgs eventArgs)
         {
-            //try
-            //{
+            try
+            {
+                StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+                StrictMode.SetVmPolicy(builder.Build());
                 Intent intent = new Intent(MediaStore.ActionImageCapture);
-            //    StartActivity(intent);
-            //}
-            //catch (System.Exception e)
-            //{
-            //    Toast.MakeText(this, e.Message, ToastLength.Long).Show();
-            //}
-            //App._file = new File(App._dir, System.String.Format("myPhoto_{0}.jpg", System.Guid.NewGuid()));
-            //intent.PutExtra(MediaStore.ExtraOutput, Uri.FromFile(App._file));
-            //StartActivityForResult(intent, 0);
+                if (intent.ResolveActivity(PackageManager) != null)
+                {
+                    StartActivityForResult(intent, 100);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Toast.MakeText(this, e.Message, ToastLength.Long).Show();
+            }
         }
     }
 }
