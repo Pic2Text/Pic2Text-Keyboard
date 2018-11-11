@@ -13,7 +13,7 @@ using Android.Content;
 
 namespace Pic2TextKeyboard.Droid
 {
-    [Service(Permission = "android.permission.BIND_INPUT_METHOD", Label = "EDMTKeyboard")]
+    [Service(Permission = "android.permission.BIND_INPUT_METHOD", Label = "Pic2TextKeyboard")]
     [MetaData("android.view.im", Resource = "@xml/method")]
     [IntentFilter(new string[] { "android.view.InputMethod" })]
     public class MainActivity : InputMethodService, KeyboardView.IOnKeyboardActionListener
@@ -67,7 +67,7 @@ namespace Pic2TextKeyboard.Droid
                         ic.CommitText("", 1);
 
                     break;
-                case Android.Views.Keycode.CapsLock:
+                case Android.Views.Keycode.Unknown:
                     TextData.LastText = string.Empty;
                     Intent intent = new Intent();
                     intent.SetClass(this, typeof(CameraActivity));
