@@ -37,14 +37,16 @@
     <Key android:codes="102" android:keyLabel="f"/>
     <Key android:codes="103" android:keyLabel="g"/>
     <Key android:codes="104" android:keyLabel="h"/>
-    <Key android:codes="105" android:keyLabel="j"/>
-    <Key android:codes="106" android:keyLabel="k"/>
-    <Key android:codes="107" android:keyLabel="l"/>
+    <Key android:codes="106" android:keyLabel="j"/>
+    <Key android:codes="107" android:keyLabel="k"/>
+    <Key android:codes="108" android:keyLabel="l"/>
     <Key android:codes="35,64" android:keyLabel="\# \@" android:keyEdgeFlags="right" />
   </Row>
 
   <Row>
-    <Key android:codes="155" android:keyLabel="CAPS" android:keyEdgeFlags="left" />
+    <Key android:codes="0" android:keyIcon="@drawable/camera"
+         android:keyEdgeFlags="left"
+         android:keyWidth="20%p"/>
     <Key android:codes="122" android:keyLabel="z"/>
     <Key android:codes="120" android:keyLabel="x"/>
     <Key android:codes="99" android:keyLabel="c"/>
@@ -66,11 +68,12 @@
          />
 
     <Key android:codes="32" android:keyLabel="SPACE"
-         android:keyWidth="40%p"
+         android:keyWidth="60%p"
          android:isRepeatable="true" />
 
-    <Key android:codes="67" android:keyLabel="DEL"
+    <Key android:codes="67"
          android:keyWidth="20%p"
-         android:keyEdgeFlags="right" />
+         android:keyEdgeFlags="right"
+         android:keyIcon="@drawable/Delete_Button"/>
   </Row>
 </Keyboard>

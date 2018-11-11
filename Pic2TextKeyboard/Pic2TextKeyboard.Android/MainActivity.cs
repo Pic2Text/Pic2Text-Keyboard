@@ -9,18 +9,36 @@ using Android.OS;
 using Android.InputMethodServices;
 using Java.Lang;
 using Android.Views.InputMethods;
+using Android.Content;
 
 namespace Pic2TextKeyboard.Droid
 {
-    [Service(Permission = "android.permission.BIND_INPUT_METHOD", Label = "EDMTKeyboard")]
+    [Service(Permission = "android.permission.BIND_INPUT_METHOD", Label = "Pic2TextKeyboard")]
     [MetaData("android.view.im", Resource = "@xml/method")]
     [IntentFilter(new string[] { "android.view.InputMethod" })]
     public class MainActivity : InputMethodService, KeyboardView.IOnKeyboardActionListener
     {
+        public static MainActivity Instance { get; private set; }
+
         private KeyboardView kv;
         private Keyboard keyboard;
+        private IInputConnection ic;
 
-        private bool isCaps = false;
+        public MainActivity()
+        {
+            Instance = this;
+        }
+
+        public override void OnStartInput(EditorInfo attribute, bool restarting)
+        {
+            base.OnStartInput(attribute, restarting);
+
+            if (!string.IsNullOrEmpty(TextData.LastText))
+            {
+                CurrentInputConnection.CommitText(TextData.LastText, 1);
+                TextData.LastText = string.Empty;
+            }
+        }
 
         public override View OnCreateInputView()
         {
@@ -33,7 +51,7 @@ namespace Pic2TextKeyboard.Droid
 
         public void OnKey([GeneratedEnum] Android.Views.Keycode primaryCode, [GeneratedEnum] Android.Views.Keycode[] keyCodes)
         {
-            IInputConnection ic = CurrentInputConnection;
+            ic = CurrentInputConnection;
 
             if (ic == null)
                 return;
@@ -49,8 +67,12 @@ namespace Pic2TextKeyboard.Droid
                         ic.CommitText("", 1);
 
                     break;
-                case Android.Views.Keycode.CapsLock:
-                    
+                case Android.Views.Keycode.Unknown:
+                    TextData.LastText = string.Empty;
+                    Intent intent = new Intent();
+                    intent.SetClass(this, typeof(CameraActivity));
+                    intent.SetFlags(ActivityFlags.NewTask);
+                    StartActivity(intent);
                     break;
                 default:
                     char code = (char)primaryCode;
