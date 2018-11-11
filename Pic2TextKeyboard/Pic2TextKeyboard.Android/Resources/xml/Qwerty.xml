@@ -37,9 +37,9 @@
     <Key android:codes="102" android:keyLabel="f"/>
     <Key android:codes="103" android:keyLabel="g"/>
     <Key android:codes="104" android:keyLabel="h"/>
-    <Key android:codes="105" android:keyLabel="j"/>
-    <Key android:codes="106" android:keyLabel="k"/>
-    <Key android:codes="107" android:keyLabel="l"/>
+    <Key android:codes="106" android:keyLabel="j"/>
+    <Key android:codes="107" android:keyLabel="k"/>
+    <Key android:codes="108" android:keyLabel="l"/>
     <Key android:codes="35,64" android:keyLabel="\# \@" android:keyEdgeFlags="right" />
   </Row>
 
